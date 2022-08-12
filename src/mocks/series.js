@@ -62,8 +62,12 @@ const MFseries = [
       "Gwendoline Christie",
       "Kirby Howell-Baptiste",
       "Boyd Holbrook",
-      "Lauren Vélez","Vivienne Acheampong","Stephen Fry","Asim Chaudhry","Sanjeev Bhaskar","Donna Preston",
-
+      "Lauren Vélez",
+      "Vivienne Acheampong",
+      "Stephen Fry",
+      "Asim Chaudhry",
+      "Sanjeev Bhaskar",
+      "Donna Preston",
     ],
   },
 ];
