@@ -3,18 +3,22 @@ const getId = require("../services/getId");
 const MFseries = require("../mocks/series");
 const putSeries = require("../services/put");
 const postSeries = require("../services/post");
+const getAll = require("../services/getAll");
 
-const deletecontrollers = (req, res) => {
+const getAllcontrollers = async (req, res) => {
+  res.send(getAll());
+};
+const deletecontrollers = async (req, res) => {
   const id = req.params.id;
   res.send(deleteSeries(id));
 };
 
-const searchControllers = (req, res) => {
+const searchControllers = async (req, res) => {
   const id = req.params.id;
   res.send(getId(id));
 };
 
-const putControllers = (req, res) => {
+const putControllers = async (req, res) => {
   const id = req.params.id;
   res.send(
     putSeries(id, {
@@ -26,12 +30,12 @@ const putControllers = (req, res) => {
     })
   );
 };
-const postCotrollers = (req, res) => {
+const postCotrollers = async (req, res) => {
   res.send(
     postSeries({
       nome: req.body.nome,
       ano: req.body.ano,
-      temporada: req.body.temporada,
+      temporadas: req.body.temporada,
       genero: req.body.genero,
 
       elenco: req.body.elenco,
@@ -44,4 +48,5 @@ module.exports = {
   deletecontrollers,
   putControllers,
   postCotrollers,
+  getAllcontrollers,
 };

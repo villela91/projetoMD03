@@ -1,4 +1,5 @@
-function getAll(MFseries){
-    const MFseries = require("../mocks/series")
-    
+const seriesmodel = require("../models/models");
+async function getAll() {
+  return await seriesmodel.find();
 }
+module.exports = getAll;

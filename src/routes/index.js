@@ -1,4 +1,3 @@
-/* It's a route that will be called when the user accesses the url `http://localhost:3000/:nome` */
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -9,16 +8,16 @@ const {
   deletecontrollers,
   putControllers,
   postCotrollers,
+  getAllcontrollers,
 } = require("../controllers/series.controllers");
-// const deletecontrollers= require("../controllers/series.controllers")
 
+const connectTodatabase = require("../database/database");
+connectTodatabase();
 const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
-app.get("/", function (req, res) {
-  res.send(MFseries);
-});
+app.get("/", getAllcontrollers);
 
 app.delete("/delete/:id", deletecontrollers);
 

@@ -3,7 +3,7 @@ function deleteSeries(id) {
 
   for (let i of MFseries) {
     if (i.id === id) {
-      const localiza = MFseries.indexOf(i);
+      const localiza = MFseries.indexOf(i);//fiendbyid.
       MFseries.splice(localiza, 1);
       return MFseries;
     }
