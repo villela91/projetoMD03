@@ -22,8 +22,10 @@ app.get("/", getAllcontrollers);
 
 app.delete("/delete/:id", deletecontrollers);
 
-app.get("/search/:id", searchControllers);
-
+app.get("/search/:id", async (req, res) => {
+  const seriesmodel = require("../models/models");
+  res.send(await seriesmodel.findOne({ id: req.params.id }))
+})
 app.put("/put/:id", putControllers);
 
 app.post("/post", postCotrollers);
