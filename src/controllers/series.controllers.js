@@ -14,10 +14,8 @@ const deletecontrollers = async (req, res) => {
 };
 
 const searchControllers = async (req, res) => {
-  const id = req.params.id;
-  res.send(await getId(id));
+  res.send(await getId(req.params.id))
 };
-
 const putControllers = async (req, res) => {
   const id = req.params.id;
   res.send(
