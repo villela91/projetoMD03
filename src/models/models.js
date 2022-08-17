@@ -8,6 +8,6 @@ const Seriesschema = new mongoose.Schema({
     elenco:{type: Array,required: true},
 })
 
-const SeriesModels = new mongoose.model("series",Seriesschema)
+const SeriesModels = new mongoose.model("MFseries",Seriesschema)
 
 module.exports = SeriesModels;

@@ -33,9 +33,10 @@ const putControllers = async (req, res) => {
 const postCotrollers = async (req, res) => {
   res.send(
     postSeries({
+      id: req.body.id,
       nome: req.body.nome,
       ano: req.body.ano,
-      temporadas: req.body.temporada,
+      temporadas: req.body.temporadas,
       genero: req.body.genero,
 
       elenco: req.body.elenco,
