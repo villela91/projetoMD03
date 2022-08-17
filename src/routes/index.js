@@ -1,3 +1,4 @@
+/* It's a route that will be called when the user accesses the url `http://localhost:3000/:nome` */
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -11,7 +12,7 @@ const {
   getAllcontrollers,
 } = require("../controllers/series.controllers");
 
-const connectTodatabase = require("../database/database");
+const connectTodatabase = require('../database/database')
 connectTodatabase();
 const port = process.env.PORT || 3000;
 

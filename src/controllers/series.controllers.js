@@ -6,22 +6,22 @@ const postSeries = require("../services/post");
 const getAll = require("../services/getAll");
 
 const getAllcontrollers = async (req, res) => {
-  res.send(getAll());
+  res.send(await getAll());
 };
 const deletecontrollers = async (req, res) => {
   const id = req.params.id;
-  res.send(deleteSeries(id));
+  res.send(await deleteSeries(id));
 };
 
 const searchControllers = async (req, res) => {
   const id = req.params.id;
-  res.send(getId(id));
+  res.send(await getId(id));
 };
 
 const putControllers = async (req, res) => {
   const id = req.params.id;
   res.send(
-    putSeries(id, {
+    await putSeries(id, {
       nome: req.body.nome,
       ano: req.body.ano,
       temporada: req.body.temporada,
@@ -32,7 +32,7 @@ const putControllers = async (req, res) => {
 };
 const postCotrollers = async (req, res) => {
   res.send(
-    postSeries({
+    await postSeries({
       id: req.body.id,
       nome: req.body.nome,
       ano: req.body.ano,
