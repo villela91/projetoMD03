@@ -12,7 +12,7 @@ const {
   getAllcontrollers,
 } = require("../controllers/series.controllers");
 
-const connectTodatabase = require('../database/database')
+const connectTodatabase = require("../database/database");
 connectTodatabase();
 const port = process.env.PORT || 3000;
 
@@ -24,8 +24,8 @@ app.delete("/delete/:id", deletecontrollers);
 
 app.get("/search/:id", async (req, res) => {
   const seriesmodel = require("../models/models");
-  res.send(await seriesmodel.findOne({ id: req.params.id }))
-})
+  res.send(await seriesmodel.findOne({ id: req.params.id }));
+});
 app.put("/put/:id", putControllers);
 
 app.post("/post", postCotrollers);
